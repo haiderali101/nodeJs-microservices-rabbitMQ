@@ -86,8 +86,8 @@ createConnection().then((db) => {
       );
 
       amqpChannel.consume(ITEM_DELETED, async (msg) => {
-        const admin_id = parseInt(msg.content.toString());
-        await itemRepo.deleteOne({ admin_id });
+        const adminId = parseInt(msg.content.toString());
+        await itemRepo.deleteOne({ adminId });
         console.log(ITEM_DELETED);
       });
 
